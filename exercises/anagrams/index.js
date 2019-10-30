@@ -11,11 +11,12 @@
 const stringToObjectMap = string => {
     const result = {};
     for (let i in string) {
-        if (!result[string[i]]) {
-            result[string[i]] = 1;
-        } else {
-            result[string[i]]++;
-        }
+        result[string[i]] = result[string[i]] + 1 || 1;
+        // if (!result[string[i]]) {
+        //     result[string[i]] = 1;
+        // } else {
+        //     result[string[i]]++;
+        // }
     }
     return result;
 };
