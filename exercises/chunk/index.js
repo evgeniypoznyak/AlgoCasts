@@ -26,19 +26,28 @@ function chunk(array, size) {
     // }
     // return result;
 
-    const chunked = [];
-    for (let element of array){
-        // get the pointer for element in array to modify it
-        const last = chunked[chunked.length - 1];
-        if (!last || last.length === size) {
-            chunked.push([element]);
-        }else{
-            // modify chunked by modifying pointer
-            last.push(element);
-        }
+    // const chunked = [];
+    // for (let element of array) {
+    //     // get the pointer for element in array to modify it
+    //     const last = chunked[chunked.length - 1];
+    //     if (!last || last.length === size) {
+    //         chunked.push([element]);
+    //     } else {
+    //         // modify chunked by modifying pointer
+    //         last.push(element);
+    //     }
+    //
+    // }
+    // return chunked;
 
+    const result = [];
+    let index = 0;
+    while (index < array.length) {
+        result.push(array.slice(index, index + size));
+        index += size;
     }
-    return chunked;
+    return result;
+
 }
 
 module.exports = chunk;
