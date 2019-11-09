@@ -8,13 +8,17 @@
 //   vowels('Why?') --> 0
 
 function vowels(str) {
-    let result = 0;
-    const letters = 'aeiou';
-    for (let char of str.toLocaleLowerCase()) {
-        if (letters.includes(char)) {result++;}
-    }
 
-    return result;
+    const matches = str.match(/[aeiou]/gi);
+    return matches ? matches.length : 0;
+
+    // let result = 0;
+    // const letters = 'aeiou';
+    // for (let char of str.toLocaleLowerCase()) {
+    //     if (letters.includes(char)) {result++;}
+    // }
+    //
+    // return result;
 
     // const vowels = ['a', 'e', 'i', 'o', 'u'];
     // const arr = str.toLocaleLowerCase().split('');
